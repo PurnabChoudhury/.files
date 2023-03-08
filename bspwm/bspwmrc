@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+#autostart
+nitrogen --restore &
+xsetroot -cursor_name left_ptr &
+picom -b &
+polybar &
+sxhkd &
+
+bspc monitor -d        
+
+bspc config ignore_ewmh_struts true
+bspc config top_padding 43
+
+bspc config border_width         3
+bspc config window_gap          6
+bspc config active_border_color '#FF00000'
+bspc config normal_border_color '#FF00000'
+bspc config focused_border_color '#AFAFED'
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
